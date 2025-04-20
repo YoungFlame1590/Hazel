@@ -32,7 +32,7 @@ namespace Hazel {
 
 	class HAZEL_API Event
 	{
-		friend class EvenDispatcher;
+		friend class EventDispatcher;
 	public:
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
@@ -74,4 +74,9 @@ namespace Hazel {
 	{
 		return os << e.ToString();
 	}*/
+
+	inline auto format_as(const Event& event)
+	{
+		return event.ToString();
+	}
 }
